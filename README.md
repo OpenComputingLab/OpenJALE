@@ -1,7 +1,10 @@
 # OpenJALE
-Open Jupyter Authoring and Learning Environment
+__Open Jupyter Authoring and Learning Environment__
 
-Book site: https://opencomputinglab.github.io/OpenJALE/philosophy.html
+Book site: https://opencomputinglab.github.io/OpenJALE/
+
+
+## Publishing Route
 
 Book site generated using a manually triggered Github action to createe the book files from a single `index.Rmd` document.
 

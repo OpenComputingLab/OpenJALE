@@ -9,3 +9,8 @@ An unextended Jupyter notebook or JupyterLab environment provides a minimal inte
 However, by pre-configuring a Jupyter notebook environment with a range of pre-installed and pre-enabled notebook extensions, we can create a much richer environment for authoring and working notebooks.
 
 By authoring learning materials in a way that exploits these extensions, we can create a much more powerful teaching and learning environment.
+
+
+# Class Notebook Extensions Configurator
+
+I the classic Jupyter notebook environment, the nbextensions configurator provides a handy interfacing for managing installed extensions.
