@@ -1,0 +1,30 @@
+bookdown::gitbook:
+  config:
+    toc_depth: 3
+    toc:
+      collapse: section
+      scroll_highlight: yes
+      before: |
+        <li><a href="./"><strong>OpenJALE</strong></a></li>
+      after: |
+        <li>Tony Hirst, May 2021</li>
+    toolbar:
+      position: fixed
+    edit : null
+    download: []
+    search: yes
+    fontsettings:
+      theme: white
+      family: sans
+      size: 2
+    sharing:
+      facebook: no
+      github: no
+      twitter: no
+      linkedin: no
+      weibo: no
+      instapaper: no
+      vk: no
+      all: []
+    info: yes
+
