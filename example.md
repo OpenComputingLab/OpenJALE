@@ -130,23 +130,54 @@ Configuration settings are saved to a config file and may be distributed as part
 
 *What is currently lacking is a tool that can detect and install publicly listed extensions. At the moment, there is no reliable extensions registry / list that I am aware of.*
 
+# Authoring Arbitrary Text Documents in the Notebook Editor
+
+TO DO - jupytext
+
 
 # Authoring Extensions
 
 ## Editing Environment Extensions
 
+
+### Live markdown Preview
+
+The  `jupyter-contrib-nbextensions` packaged *live markdown preview* extension will provide a live preview of text currently being edited in a markdown cell. A notebook extensions configurator panel allows the user to select whether the preview appears directly below the cell being edited (the default behaviour) or to the side.
+
+![](images/live_md.gif)
+
+*Note that the highlighted spellchecking as text is entered comes from the `spellchecker` extension.*
+
 ## Quality Process Extensions
 
+
+TO DO  - code prettify (also R)
+ 
+TO DO - auopep8
+
+TO DO pycodestyle_magic / flake8_magic
+
+### Spellchecking
+
+The `jupyter-contrib-nbextensions` packaged *spellchecker* extension will highlight unrecognised words in markdown cells that are in edit mode.
+
+![](images/spell_checker.png)
+
+The configurator can be used to display a toolbar button to toggle the operation of the spellchecker; the dictionary used for spellcheck lookups can also be specified.
+
+![](images/spell_check_config.png)
+
+The extension will also offer a live preview as you type:
+ 
+ ![](images/live_md.gif)
+ 
+*Note that the live rendered markdown preview is provided by the live markdown preview extension.*
+
+The configurator allows to the live markdown preview to be automatically applied enabled in each opened notebook.
 
 # Styling Extensions
 
 Various extensions are available that can influence the way materials are presented. For example, different coloured background cells.
-
-## `tagstyler`
-
-The [`nb_extension_tagstyler`](https://github.com/innovationOUtside/nb_extension_tagstyler) provides a simple way to apply Bootstrap `alert` style styling to cells based on a cell tag:
-
-![](images/tagstyler.png)
 
 ## `empinken`
 
@@ -165,45 +196,102 @@ A configuration panel allows the user to control which (if any) buttons are disp
 
 
 
-# Visual and Audio Feedback Extensions
+## `tagstyler`
 
-Several extensions exist that can be used to modify or extend the range of visual feedback provided when using the 
+The [`nb_extension_tagstyler`](https://github.com/innovationOUtside/nb_extension_tagstyler) provides a simple way to apply Bootstrap `alert` style styling to cells based on a cell tag:
+
+![](images/tagstyler.png)
+
+
+
+# Visual and Audio Layout and Feedback Extensions
+
+Several extensions exist that can be used to add various forms of visual or audio feedback to the notebook user interface.
+
+These extensions might be used in part to help maintain a sense of situational awareness about the state of the various cells.
+
+See also: *Accessibility Extensions*
+
+## Cell Execution Status
+
+The [`nb_cell_execution_status`](https://github.com/innovationOUtside/nb_cell_execution_status) extension uses colour in code cell gutters to indicate the run status of each code cell:
+
+- white: not executed
+- light cyan: awaiting execution
+- green: successfully executed
+- pink: failed
+
+![](images/cell_status.png)
+
+This provides useful feedback on which part of the notebook has been run during a notebook session.
+
+Audible feedback for successful and unsuccessful cell completion can also be enabled from the notebook extension configurator menu:
+
+![](images/cell-execution_config.png)
+
+## Two Column Display
+
+The [`twoCol`](https://github.com/innovationOUtside/nb_extension_twoCol) extension provides a toolbar button that will toggle the display of a selected code cell from a one column to a two column display, allowing the code cell output to be displayed alongside, rather than below, a code cell.
+
+![](images/two_column_display.png)
+
+*For feature requests relating to further development of this extension, please [file an issue](https://github.com/innovationOUtside/nb_extension_twoCol/issues) on the repository.*
 
 # Accessibility Extensions
 
 See also: *Visual and Audio Feedback Extensions*
 
+## `accessibility_toolbar`
 
-# Custom Activity Extensions
+A no longer supported extension developed as part of a Masters project, the [`accessibility_toolbar`](https://github.com/uclixnjupyternbaccessibility/accessibility_toolbar) extension adds a toolbar to your notebook with five separate accessibility tools:
+
+- apply style changes to the notebook (eg font selection, font size, line height, letter spacing);
+- spell checker;
+- accessible themes;
+- voice control (voice control for several notebook commands);
+- planner/notepad (pop-up markdown notepad for taking notes alongside the notebook; content saved inside the `.ipynb` notebook document).
+
+
+*The stability of this extension is moot; if you would like to use this extension, or see it developed further, please raise issues on this [fork of the original repository](https://github.com/ouseful-PR/accessibility_toolbar/issues).*
+
+
+## `jupyter-a11y`
+
+The [`jupyter-a11y`](https://github.com/ouseful-backup/jupyter-a11y/) extension is a proof-of-concept exensions that provides a range of audible reporting tools to support notebook use.
+
+- background hum when kernel busy;
+- identify command / edit mode (Ctrl-Shift-M / Ctrl-Shift-M);
+- the mode is announced when you click in a cell;
+- identify cell location (Shift-G / Ctrl-Shift-G); eg "cell number 4 of 45"; [could maybe identify code or markdown cell?];
+- read cell contents (Shift-R / Ctrl-Shift-R) [identifies cell type and number of lines; lines don't seem to be read correctly? Seems like one line at a time is read and things queue up somewhere?]
+
+The extension is unsupported and not very stable; if you are interested in using this extension, please [raise an issue](https://github.com/ouseful-backup/jupyter-a11y/issues) on the repository to expedite work on maintenance and feature request development.
+
+
+## `jupyterthemes`
+
+The [`jupyterthemes`](https://github.com/dunovank/jupyter-themes) extension supports a range of themes and theme customisations.
+
+Themes are set form the command line. The command line commands allow a particular theme to be selected and applied to all opened notebooks, and additional customisations to be applied to layout if required, including:
+
+- markdown cell font size and style;
+- code cell font size and style;
+- output area and Mathjax font size;
+- line height;
+- margin width;
+- cell width;
+- cursor width / color;
+- pandas dataframe output styling.
+
+Note that using a custom theme may break other other extensions. Use the issues on a [fork of the `jupyterthemes`](https://github.com/ouseful-PR/jupyter-themes/issues) repo to discuss local/OU issues relating to this extension.
+
+# Custom Activity Extensions and Magics
 
 In certain cases, extensions or magics might be created to support or enable particular activities within the notebook environment.
 
 See also: *Appendix — exploiting rich `__repr__` outputs*.
 
 For example, an extension created to support live diagramming of the table structure of a connected relational database.
-
-## `nbtutor` Code Stepper
-
-The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple code stepper and variable inspector at the code cell level.
-
-![](images/nb_tutor_usage.gif)
-
-The `nbtutor` extension supports activities framed around stepping through code a line at a time within a single code cell.
-
-
-## Database Schema Display
-
-The [`ipython_magic_sqlalchemy_schemadisplay`](https://github.com/innovationOUtside/ipython_magic_sqlalchemy_schemadisplay) magic will create and display a simple visual entity relation diagram depicting the structure of a connected database.
-
-![](images/example_erd.png)
-
-This extension is being used in a module on database management and analysis to visualise the structure of provided databases as part of worked activities, as well as allowing students to visualise the structure of databases they have constructed for themselves.
-
-## Cell Popout
-
-The [`nb_cell_dialog`](https://github.com/innovationOUtside/nb_cell_dialog) extension allows cells and code cell outputs to be popped out into a separate floating widget. Closing the widget sends the cell back to its original location in the notebook:
-
-![](images/popout.gif)
 
 ## Blockdiag Magic
 
@@ -218,4 +306,116 @@ The [`ipython_magic_blockdiag`](https://github.com/innovationOUtside/ipython_mag
 ![](images/actdiag.png)
 
 
-# Appendix — exploiting rich `__repr__` Outputs
+## Cell Diff
+
+The [`cell_diff`](https://github.com/innovationOUtside/nb_cell_diff) extension is based on the Google `diff-match-patch` package and provides a range of simple tools for ad hoc, in notebook, code cell differencing.
+
+![](images/nb_cell_diff.png)
+
+## Cell Popout
+
+The [`nb_cell_dialog`](https://github.com/innovationOUtside/nb_cell_dialog) extension allows cells and code cell outputs to be popped out into a separate floating widget. Closing the widget sends the cell back to its original location in the notebook:
+
+![](images/popout.gif)
+
+## Cell Shell
+
+The [`cell_shell`](https://github.com/innovationOUtside/nb_cell_shell) magic allows a user to force the notebook to run each code cell in a notebook in a separate Python shell. This means that there are no hidden state effects, but requires that each code cell contains a complete program in order to run.
+
+## Database Schema Display
+
+The [`ipython_magic_sqlalchemy_schemadisplay`](https://github.com/innovationOUtside/ipython_magic_sqlalchemy_schemadisplay) magic will create and display a simple visual entity relation diagram depicting the structure of a connected database.
+
+![](images/example_erd.png)
+
+This extension is being used in a module on database management and analysis to visualise the structure of provided databases as part of worked activities, as well as allowing students to visualise the structure of databases they have constructed for themselves.
+
+
+
+TO DO - flowchart magic
+
+TO DO - sql magic
+
+
+TO DO - cypher magic
+
+TO DO - datasette magic
+
+
+## `nbtutor` Code Stepper
+
+The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple code stepper and variable inspector at the code cell level.
+
+![](images/nb_tutor_usage.gif)
+
+The `nbtutor` extension supports activities framed around stepping through code a line at a time within a single code cell.
+
+## `skip-traceback`
+
+The `skip-traceback` extension, which forms part of the official unoffical `jupyter-contrib-nbextensions` distribution, will collapse a full Python error message beneath a collapsed header:
+
+![](images/skip_traceback.gif)
+
+*Note that the pink error highlight in the cell gutter is provided by the `cell_status` extension.*
+
+THe configurator panel for the extension allows the `skip-traceback` function to be automatically be enabled or disabled for each notebook that is opened, as well as an optional toolbar button for enabling / disabling the behaviour:
+
+![](images/skip_traceback_config.png)
+
+# Recipes
+
+This section includes various recipes for how to mix-and-match the behaviout of several extensions in order to achieve a particular effect.
+
+## Python Code Error Reporting
+
+Use the `cells_status` and `skip_traceback` extensions to help identify and improve the display of Python errors.
+
+![](images/skip_traceback.gif)
+
+## Notebook Activity Sections
+
+Activities can be identified and style using the `empinken` extension to style cells and the `collapisble headings` extension to hide activity answers.
+
+![](images/jupyter_answer_reveal.gif)
+
+
+## Spellchecked and Previewed Editing
+
+Using the spellcheck and live markdown preview extensions, you can preview the styled output of markdown text currently being edited as well as live spellchecking in the edited cell.
+
+![](images/live_md.gif)
+
+
+# JupyterLab Extensions
+
+JupyterLab is the next generation Jupyter user interface, employing user interface framework components different from the classic notebook. This means that classic notebook extensions will not work in the JupyterLab context.
+
+To migrate "extension enhanced" notebooks into the JupyterLab context, classic notebook extensions will have to be ported to JupyterLab, or equivalents found amongst the currently available JupyterLab extensions.
+
+The following JupyterLab extensions offer similar functionality to classic notebook extensions although they may not use the same metadata or tag components to enable or declare features, so conversion of notebook `.ipynb` may be required to update metadata from classic notebook extension metadata to metadata formats expected by JupyterLab extensions.
+
+
+## Collapsible Headings
+
+The [JupyterLab `Collapsible_Headings` extension](https://github.com/aquirdTurtle/Collapsible_Headings) ostensibly works in the same way as the classic notebook extension, using a `heading_collapsed` metadata attribute in a notebook cell to identify the header from which a collapse begins.
+
+However, the value assigned to `heading_collapsed` is *not* the same in the JupyterLab and classic extensions. In the classic extension, the assignment is to the boolean `true`; in the JupyterLab extension, the assignment is to the string `"true"`.
+
+See this [related issue](https://github.com/aquirdTurtle/Collapsible_Headings/issues/38) requesting metadata parity across extensions.
+
+
+
+TO DO 
+
+[jupyter-scribe](https://github.com/jupytercalpoly/jupyterlab-richtext-mode) JupyterLab extension _"transforms Markdown cells into rich-text-editing cells, powered by ProseMirror"_.
+
+# Appendix — exploiting rich `__repr__` Outputs {-}
+
+# Appendix — Jupyter server proxy applications {-}
+
+
+RStudio
+OpenRefine
+TM129 proxies
+
+# Authoring Notebooks in VS Code {-}
