@@ -130,6 +130,10 @@ Configuration settings are saved to a config file and may be distributed as part
 
 *What is currently lacking is a tool that can detect and install publicly listed extensions. At the moment, there is no reliable extensions registry / list that I am aware of.*
 
+
+
+TO DO install configurator; official unofficial extensions
+
 # Authoring Arbitrary Text Documents in the Notebook Editor
 
 TO DO - jupytext
@@ -342,6 +346,7 @@ TO DO - cypher magic
 TO DO - datasette magic
 
 
+
 ## `nbtutor` Code Stepper
 
 The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple code stepper and variable inspector at the code cell level.
@@ -358,7 +363,7 @@ The `skip-traceback` extension, which forms part of the official unoffical `jupy
 
 *Note that the pink error highlight in the cell gutter is provided by the `cell_status` extension.*
 
-THe configurator panel for the extension allows the `skip-traceback` function to be automatically be enabled or disabled for each notebook that is opened, as well as an optional toolbar button for enabling / disabling the behaviour:
+The configurator panel for the extension allows the `skip-traceback` function to be automatically be enabled or disabled for each notebook that is opened, as well as an optional toolbar button for enabling / disabling the behaviour:
 
 ![](images/skip_traceback_config.png)
 
@@ -403,7 +408,7 @@ However, the value assigned to `heading_collapsed` is *not* the same in the Jupy
 
 See this [related issue](https://github.com/aquirdTurtle/Collapsible_Headings/issues/38) requesting metadata parity across extensions.
 
-
+TO DO dismissible
 
 TO DO 
 
@@ -413,9 +418,102 @@ TO DO
 
 # Appendix — Jupyter server proxy applications {-}
 
+[`jupyter-server-proxy](https://github.com/jupyterhub/jupyter-server-proxy) is a general purpose application for Jupyter classic notebooks and JupyterLab that can be used to launch and proxy arbitrary web applications running in the same context as the Jupyter server.
 
-RStudio
-OpenRefine
-TM129 proxies
+Applications can be launched from the Jupyter notebook homepage *New* menu or the JupyterLab launcher. The path to the application can be given as a "nice" application name on the Jupyter notebook application server path.
+
+The `jupyter-server-proxy` idea is useful in several respects:
+
+- a container running a Jupyter server and jupyter-server-proxy only needs to expose a single http port (the one that the notebook / JupyterLab is accessed via). All other applications can be proxied along the same path using the same port;
+- many simple web applications applications do not have any authentication; proxying an application behind a Jupyter server means you can make use of the notebook server authenticator to provide a challenge before providing access to the application;
+- the `jupyter-server-proxy` will start an application when it is first requested, so applications do not need to be started when the environment is started; applciations are only started when requested. If a repeated request is made for an application that has already been started, the user will be taken directly to it.
+
+Multiple applications can be installed and accessed using  custom `jupyter-server-proxy` templated extensions.
+
+
+## OpenRefine
+
+[`jupyterserverproxy-openrefine`](https://github.com/psychemedia/jupyterserverproxy-openrefine) is a jupyter-server-proxy extension for running [OpenRefine](https://openrefine.org/), a Java based web app for cleaning tabiularo datasets.
+
+![](images/openrefine_server_proxy.png)
+
+![](images/OpenRefine.png)
+
+## `pgweb`
+
+[`jupyter-pgweb-proxy`](https://github.com/illumidesk/jupyter-pgweb-proxy) is a jupyter-serverproxy extension for running [`pgweb`](http://sosedoff.github.io/pgweb/), a browser based management UI for PostrSQL databases.
+
+![](images/pgweb_proxy.png)
+![](images/pgweb.png)
+
+## `nb_tensorspace_server_proxy`
+
+The [`nb_tensorspace_server_proxy`](https://github.com/innovationOUtside/nb_tensorspace_server_proxy) extension wraps a locally running version of the [*Tensorspace.js*](https://github.com/tensorspace-team/tensorspace) playground behind a proxied simple web server.  
+
+![](images/TensorSpace_Playground.png)
+
+The application can be launched from the classic Jupyter notebook homepage *New* menu, or the JupyterLab launcher.
+
+![](images/tfs_playground_nbserverproxy.png)
+
+The TensorSpace.js* playground provides an interactive web application that will attempt to recognise a user entered handwritten digit and visualise the activation of a simple pre-trained tensorflow network:
+
+![](images/TensorSpace_Playground_-_LeNet.png)
+
+## Tensorflow Playground
+
+The [`nb_tensorflow_playground_serverproxy`](https://github.com/innovationOUtside/nb_tensorflow_playground_serverproxy) jupyter-server-proxy extension wraps a locally running version of the Google [Tensorflow Playground](https://playground.tensorflow.org/)
+behind a proxied simple web server.
+
+![](images/tensorflow_playground_proxy.png)
+![](images/tensorflow_playground.png)
+
+
+
+## `serverproxy_convnet_mnist`
+
+The [`serverproxy_convnet_mnist`](https://github.com/innovationOUtside/serverproxy_convnet_mnist) jupyter-server-proxy extension wraps a locally running version of the original [*ConvNetJS*](https://cs.stanford.edu/people/karpathy/convnetjs/) web demo behind a proxied simple web server.
+
+![](images/convnet_mnist.png)
+
+![](images/ConvNetJS_MNIST_demo.png)
+
+## `serverproxy_tfjs_demos`
+
+The [`serverproxy_tfjs_demos `](https://github.com/innovationOUtside/https://github.com/innovationOUtside/serverproxy_tfjs_demos) jupyter-server-proxy extension wraps a locally running version of the [*Visualizing training with tfjs-vis
+*](https://storage.googleapis.com/tfjs-vis/mnist/dist/index.html) scrollytelling article behind a proxied simple web server.
+
+![](images/tfjs_demos_proxy.png)
+
+![](images/tfjs_demos.png)
+
+
+## Handwritten Digit Prediction
+
+[Handwritten Digit Prediction](https://github.com/ouseful-PR/Hand-Written-Digit-Recognition) is a jupyter-server-proxy extension that proxies [this original simple web demo](https://bensonruan.com/handwritten-digit-recognition-with-tensorflow-js/) or using tensorflow.js to recognise handwritten digits running via a simple http web server.
+
+![](images/nb_handwritten_digit.png)
+
+![](images/Hand_Written_Digit_Recognition.png)
+
+## RStudio / Shiny Applications
+
+[`jupyter-rsession-proxy`](https://github.com/jupyterhub/jupyter-rsession-proxy) is a proxy for the popular [RStudio IDE](https://www.rstudio.com/products/rstudio/).
+
+
+![](images/rstrudio_proxy.png)
+
+![](images/RStudio.png)
+
+A separate [`jupyter-shiny-proxy`](https://github.com/ryanlovett/jupyter-shiny-proxy) can be used to proxy R/Shiny applications.
+
+*May, 2021: the MyBinder demo for the extension seems to be broken at the moment but this is a generally a well tested extension and should be fixable; it is installed by default in many Jupyter/R Docker images.*
+
 
 # Authoring Notebooks in VS Code {-}
+
+*Simimar mechanism for PyCharm, Atom*
+
+# Authoring Notebooks from RStudio {-}
+
+note really
