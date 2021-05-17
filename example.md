@@ -185,7 +185,7 @@ Native `.ipynb` documents can also be paired with one or more text form represen
 
 Advantages of the simple text format include:
 
-- the saved content represents content that is directly manipulated by an author, rather than generated fro executing code;
+- the saved content represents content that is directly manipulated by an author, rather than content generated as code outputs by executing code;
 - the text format and lack of output provides a simpler structure that makes diffing of content to compare multiple versions easier;
 - the lack of output means that secrets or data that may be rendered as part of code cell output are not leaked by mistake.
 
@@ -432,7 +432,7 @@ The [`cell_shell`](https://github.com/innovationOUtside/nb_cell_shell) magic all
 
 
 
-## `nbtutor` Code Stepper
+### `nbtutor` Code Stepper
 
 The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple code stepper and variable inspector at the code cell level.
 
@@ -440,7 +440,7 @@ The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple c
 
 The `nbtutor` extension supports activities framed around stepping through code a line at a time within a single code cell.
 
-## `skip-traceback`
+### `skip-traceback`
 
 The `skip-traceback` extension, which forms part of the official unoffical `jupyter-contrib-nbextensions` distribution, will collapse a full Python error message beneath a collapsed header:
 
@@ -472,14 +472,14 @@ The [`ipython_magic_blockdiag`](https://github.com/innovationOUtside/ipython_mag
 ![](images/actdiag.png)
 
 
-## `flowchart_magic`
+### `flowchart_magic`
 
 The [`flowchart_magic`]https://github.com/innovationOUtside/flowchart_js_jp_proxy_widget) provides a simple *jp_proxy_widget* wrapper around the [`flowchart.js`](https://flowchart.js.org/) package to allow for the scripting of simple flowcharts:
 
 ![](images/flowchart_js_magic.png)
 
 
-## `ipython_magic_folium ` Magic
+### `ipython_magic_folium ` Magic
 
 [`ipython_magic_folium`](https://github.com/psychemedia/ipython_magic_folium) is a custom magic that simplifies the process of rendering interactive maps.
 
@@ -507,7 +507,7 @@ The `cypher_magic`](https://github.com/innovationOUtside/cypher_magic) provides 
 
 ![](images/Cypher_magic_demo.png)
 
-__May 2021: this magic is not currently working in Binder demos at least.*
+*May 2021: this magic is not currently working in Binder demos at least.*
 
 ### Database Schema Display
 
