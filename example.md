@@ -34,8 +34,23 @@ Note that the Jupyter environment may also be used as pure authoring environment
 *An OU Teach and Learn project is currently under submission (May, 2021) to explore pathways for converting between OU-XML and Jupyter `.ipynb` document formats which would allow the Jupyter notebook environment to become a generally availably authoring environment for authoring and editing OU-XML mediated content, such as VLE content.*
 
 
-# TO DO magics
-not across kernels, cf extensions which are
+## Extension Flavours
+
+There are three main ways in which a Jupyter notebook environment may be extended:
+
+- notebook extensions: these extensions add functionality to the Jupyter notebook user interface, and typically install additional Javascript into the user interface that can modify the behaviour of the interface; a particulat
+- server extensions: these extensions modify the behaviour of the server; for example, server extensions might allow novel document formats to be opened into the notebook environment or exported from it;
+- IPython magics: IPython magics can be defined that either act as "macro" style commands, or that modify the behaviour of a code cell (block cell magics); for example, block cell magics can be used to transform a code cell connected to a Python kernel to one that accepts SQL code that the Python kernel can then use as part of a query onto a connected database.
+
+A further class of "extension" comes in the form of packages installed in the Python (or R) kernel that are capable of generating "rich" output. For example, a wide variety of packages exist that make it easy to output an interactive map into a code cell output, or musical notation according to a provided score.
+
+*For a wide range of examples of packages that can produce static and interactive (rich) media outputs as part of a Jupyter Authoring system, see [`SubjectMatterNotebooks`](https://opencomputinglab.github.io/SubjectMatterNotebooks/).*
+
+For an excellent guide to notebook extensions, see the [*Unofficial Jupyter Notebook Extensions*](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/index.html).
+
+For creating Jupyter which transform code cell text using calls to the active kernel, see [*KernelExecOnCells library *](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/nbextensions/code_prettify/README.html#kernelexeconcells-library-and-nbextensions).
+
+See also: [Jupyter notebook docs: *Extending the Notebook*](https://jupyter-notebook.readthedocs.io/en/stable/extending/index.html)
 
 ## Customising the Authoring Environment
 
@@ -115,6 +130,31 @@ In terms of providing environments to students across modules, a question arises
 Where students are required to install an environment in a pure self-service model, a question arises as to how they should install any additional packages or extensions required by the module, or whether the module should *prima facie* be designed to work the the off-the shelf environment the student is expected to install or sign up to in the case of an "off-the-shelf" hosted service environment.
 
 
+# Recipes
+
+This section includes various recipes for how to mix-and-match the behaviour of several extensions in order to achieve a particular effect.
+
+Later sections will review individual extensions in more detail.
+
+## Python Code Error Reporting
+
+Use the `cells_status` and `skip_traceback` extensions to help identify and improve the display of Python errors.
+
+![](images/skip_traceback.gif)
+
+## Notebook Activity Sections
+
+Activities can be identified and style using the `empinken` extension to style cells and the `collapisble headings` extension to hide activity answers.
+
+![](images/jupyter_answer_reveal.gif)
+
+
+## Spellchecked and Previewed Editing
+
+Using the spellcheck and live markdown preview extensions, you can preview the styled output of markdown text currently being edited as well as live spellchecking in the edited cell.
+
+![](images/live_md.gif)
+
 
 # Classic Notebook Extensions Configurator
 
@@ -136,13 +176,28 @@ TO DO install configurator; official unofficial extensions
 
 # Authoring Arbitrary Text Documents in the Notebook Editor
 
-TO DO - jupytext
+The [`jupytext` package](https://jupytext.readthedocs.io/en/latest/) and associated server extension provides a toolkit for converting between the Jupyter notebook `.ipynb` document format and a wide variety of structured markdown formats including MyST and Rmd. Conversions with structure Python formats (such as the percent format used by VS Code, as well as other IDES) is also supported.
+
+The `jupytext` sever extension allows supported document formats to be opened directly from the notebook homepage into the notebook editor. Markdown and code cell input content are saved into the markdown formats, although such documents can also be "paired" with an `.ipynb` notebook document that will persist and render code cell outputs.
+
+Native `.ipynb` documents can also be paired with one or more text form representations, so whenever the notebook is saved the additional formats, as well as the `.ipynb` format are saved too (for example, into a hidden directory).
+
+Advantages of the simple text format include:
+
+- the saved content represents content that is directly manipulated by an author, rather than generated fro executing code;
+- the text format and lack of output provides a simpler structure that makes diffing of content to compare multiple versions easier;
+- the lack of output means that secrets or data that may be rendered as part of code cell output are not leaked by mistake.
 
 
 # Authoring Extensions
 
+In this section, we will review a range of Jupyer extensions that can be used to specifically support the authoring process.
+
+These include extensions that enhance or extend the authoring environment as well as extensions that support quality related activity such as might be completed by authors or editors.
+
 ## Editing Environment Extensions
 
+By "editing environment extensions", we mean extensions that can be used to extend the editing environment to improve the experience of writing.
 
 ### Live markdown Preview
 
@@ -153,6 +208,10 @@ The  `jupyter-contrib-nbextensions` packaged *live markdown preview* extension w
 *Note that the highlighted spellchecking as text is entered comes from the `spellchecker` extension.*
 
 ## Quality Process Extensions
+
+By "quality process extensions", we mean extensions that can be used to support the production of text free of error or poor layout.
+
+
 
 
 TO DO  - code prettify (also R)
@@ -181,7 +240,12 @@ The configurator allows to the live markdown preview to be automatically applied
 
 # Styling Extensions
 
-Various extensions are available that can influence the way materials are presented. For example, different coloured background cells.
+Various extensions are available that can influence the way materials are presented in the user environment. For example, extensions that support the rendering of different coloured background cells.
+
+This extensions can be used to enhance the presented materials and may degrade gracefully. For example, if the styling is not applied, the content may still "work" exactly as written, but the user may experience fewer navigational cues that the styling might have made explicit.
+
+Note that in some cases, authors may choose to use redundancy in coding of particular texts, so that degradation in the absence of an installed extension is made even more graceful. For example, using explicit emphasis to markup text that might also be highlighted by virtue of being in a cell tagged for highlighting by an installed extension.
+
 
 ## `empinken`
 
@@ -206,7 +270,7 @@ The [`nb_extension_tagstyler`](https://github.com/innovationOUtside/nb_extension
 
 ![](images/tagstyler.png)
 
-
+TO DO - folium magic
 
 # Visual and Audio Layout and Feedback Extensions
 
@@ -367,28 +431,6 @@ The configurator panel for the extension allows the `skip-traceback` function to
 
 ![](images/skip_traceback_config.png)
 
-# Recipes
-
-This section includes various recipes for how to mix-and-match the behaviout of several extensions in order to achieve a particular effect.
-
-## Python Code Error Reporting
-
-Use the `cells_status` and `skip_traceback` extensions to help identify and improve the display of Python errors.
-
-![](images/skip_traceback.gif)
-
-## Notebook Activity Sections
-
-Activities can be identified and style using the `empinken` extension to style cells and the `collapisble headings` extension to hide activity answers.
-
-![](images/jupyter_answer_reveal.gif)
-
-
-## Spellchecked and Previewed Editing
-
-Using the spellcheck and live markdown preview extensions, you can preview the styled output of markdown text currently being edited as well as live spellchecking in the edited cell.
-
-![](images/live_md.gif)
 
 
 # JupyterLab Extensions
@@ -410,11 +452,30 @@ See this [related issue](https://github.com/aquirdTurtle/Collapsible_Headings/is
 
 TO DO dismissible
 
+TO DO hidden cells
+
+TO DO - cell locking
+
+TO DO - dependent cells
+
 TO DO 
 
 [jupyter-scribe](https://github.com/jupytercalpoly/jupyterlab-richtext-mode) JupyterLab extension _"transforms Markdown cells into rich-text-editing cells, powered by ProseMirror"_.
 
 # Appendix — exploiting rich `__repr__` Outputs {-}
+
+The Python/IPython [`__repr__`](https://ipython.readthedocs.io/en/stable/config/integrating.html#rich-display) family of methods can produce rich outputs in a display context sensitive way. In a Jupyter publishing workflow, this means that objects can return rich HTML objects, for example, that can be rendered as such as notebook code cell output.
+
+See [`SubjectMatterNotebooks`](https://opencomputinglab.github.io/SubjectMatterNotebooks/) for a growing collection of examples of packages capable of producing rich, and often javascript interactive, content as part of a Jupyter publishing system.
+
+# Authoring for Rich Output Environments
+
+As well as rendering rich HTML output as a code cell output in a "live" Jupyter notbook context, notebooks, and the Jupyer server code execution machinery, can also be used to generate static HTML output documents.
+
+For example, the [*Jupyter Book*](https://jupyterbook.org/intro.html) publishing framework can produce rich interactive HTML textbooks from Jupyter notebook "source" documents by executing the notebook code and embedding code cell outputs in an output HTML document. (Publishing controls allow the code cells to be hidden but revealable, or removed altogether, from the output HTML documents.
+
+Jupyter notebooks can also be run and saved to various other output formats using the [`nbconvert`](https://nbconvert.readthedocs.io/en/latest/index.html) command line tool. Custom templates can be applied to style the output content. Several notebooks extensions also have custom template options that allow similar effects to the extension effect to be applied to content converted to other output formats. (For example, hiding cells.)
+
 
 # Appendix — Jupyter server proxy applications {-}
 
@@ -512,8 +573,16 @@ A separate [`jupyter-shiny-proxy`](https://github.com/ryanlovett/jupyter-shiny-p
 
 # Authoring Notebooks in VS Code {-}
 
-*Simimar mechanism for PyCharm, Atom*
+Jupyter notebook `.ipynb` documents can be opened and edited directly in the VS Code editor. The full range of VSCode debugging features can be deployed against the code contained in the notebook code cells. 
+
+![](images/vscode.png)
+
+Notebooks in the VS Code editor can be run against remote connected Jupyter kernels. Another VS Code extension provides support for live collaboration ([*Live Share*](https://code.visualstudio.com/learn/collaboration/live-share)).
+
+*Jupyter notebook `.ipynb` documents can also be opened and executed in PyCharm and Atom editors, although arguably the VS Code extension is the most developed.*
+
+TO DO - https://shd101wyy.github.io/markdown-preview-enhanced/#/
 
 # Authoring Notebooks from RStudio {-}
 
-note really
+not really
