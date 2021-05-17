@@ -1,12 +1,14 @@
 # Introduction
 
-*OpenJALE*, the *Open Jupyter Authoring and Learning Environment*, is an opinionated Jupyter notebook based environment for authoring and working with notebook based learning materials.
+*OpenJALE*, the *Open Jupyter Authoring and Learning Environment*, is an open, opinionated Jupyter notebook based environment for authoring and working with notebook based learning materials.
 
-This document describes a range of currently available extensions that support customisation of a Jupyter environment to enrich both the authoring and end user experience.
+It's open not least in the sense that you are free to set up the environment as you want by installing and enabling particular extensions to customise the environment. It's opinionated to the extent that I have opinions about which extensions I like, and how they can be used to together to create particular effects in a teaching and learning environment. Not all the available Jupyter extensions are listed here, perhaps because I don't like them, perhaps because I don't think they are relevant, perhaps because or forgot or haven't got round to them yet. (This document is a living document and is subject to change...)
+
+The document describes a range of currently available extensions that support customisation of a Jupyter environment to enrich both the authoring and end user experience.
 
 For example, extensions are available to support productivity and quality processes, rendering of content, and activity design and presentation.
 
-*Many of the extensions described have been and are being used in modules in presentation, as well as being used to support their production.
+*Many of the extensions described have been and are being used in modules in presentation, as well as being used to support their production. As such, many of the opinions are based on experience of, and practice in, using various set-ups to support the production and presentation of teaching and learning over the last five years or so.*
 
 
 # Customising the Jupyter Environment
@@ -156,9 +158,11 @@ Using the spellcheck and live markdown preview extensions, you can preview the s
 ![](images/live_md.gif)
 
 
-# Classic Notebook Extensions Configurator
+# Classic Notebook Extensions & Configurator
 
-In the classic Jupyter notebook environment, the `nbextensions` configurator provides a handy interfacing for managing installed extensions.
+A large number of very useful "official unoffocial" community contributed extensions are distributed as part of the [`jupyter_contrib_nbextensions`](https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/index.html) package
+
+In the classic Jupyter notebook environment, the [`nbextensions` configurator](https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator) provides a handy interfacing for managing installed extensions.
 
 ![](images/Nbextensions_Configuration.png)
 
@@ -170,9 +174,6 @@ Configuration settings are saved to a config file and may be distributed as part
 
 *What is currently lacking is a tool that can detect and install publicly listed extensions. At the moment, there is no reliable extensions registry / list that I am aware of.*
 
-
-
-TO DO install configurator; official unofficial extensions
 
 # Authoring Arbitrary Text Documents in the Notebook Editor
 
@@ -212,13 +213,22 @@ The  `jupyter-contrib-nbextensions` packaged *live markdown preview* extension w
 By "quality process extensions", we mean extensions that can be used to support the production of text free of error or poor layout.
 
 
+### `autopep8`
 
-
-TO DO  - code prettify (also R)
+The `autopep8` extension provides a toolbar button that allows you to style one of more selected code cells in accordance with Python PEP8 style guidelines using the [`autopep8`](https://github.com/hhatto/autopep8) Python package.
  
-TO DO - auopep8
+![](images/autopep8_config.png)
 
-TO DO pycodestyle_magic / flake8_magic
+![](images/autopep8.png)
+
+
+## `pycodestyle_magic` / `flake8_magic`
+
+The [`pycodestyle_magic`](https://github.com/mattijn/pycodestyle_magic) provides two magics for linting code: `%%pycodestyle` (using [`pycodestyle`](https://pycodestyle.pycqa.org/en/latest/intro.html)) and `%%flake` (using [`flake8`](https://flake8.pycqa.org/en/latest/) and any installed `flake8` extensions).
+
+![](images/flake8.png)
+
+A provided line magic can also be used to enable either linter to run automatically against each code cell whenever the code cell is run.
 
 ### Spellchecking
 
@@ -246,6 +256,25 @@ This extensions can be used to enhance the presented materials and may degrade g
 
 Note that in some cases, authors may choose to use redundancy in coding of particular texts, so that degradation in the absence of an installed extension is made even more graceful. For example, using explicit emphasis to markup text that might also be highlighted by virtue of being in a cell tagged for highlighting by an installed extension.
 
+## Code folding
+
+The *code folding* extensions, which forms part of the official unofficial `jupyter-contrib-nbextensions` distribution, allows you to collapse code within a code block.
+
+For example, code can be folded at the function level:
+
+![](images/code_folding.png)
+
+Or at the "first live" level:
+
+![](images/code_folding_2.png)
+
+## Collapsible Headings
+
+The *collapsible headings* extension, which forms part of the official unofficial `jupyter-contrib-nbextensions` distribution, allows you to collapse the cells below a markdown cell starting with a particular level header up to the cell with the same heading level (or lower (i.e. bigger heading)) than the collapsed cell.
+
+![](images/collapsible.png)
+
+This interaction can be used to provide revealable content, as well as disguise optional content.
 
 ## `empinken`
 
@@ -262,6 +291,25 @@ A configuration panel allows the user to control which (if any) buttons are disp
 
 ![](images/empinken_config.png)
 
+## Dismissible boxes
+
+Note an extension, this is a native but underappreciated trick, using an `alert-dismissible` class tag to add a dismissable interaction to a div element inside a markdown block:
+
+```{html}
+<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert">x</button>
+Report here...
+</div>
+```
+
+![](images/dismissible.png)
+
+
+## Hide Input / Hide All Input
+
+The *Hide Input* and *Hide All Input* extensions, which form part of the official unofficial `jupyter-contrib-nbextensions` distribution, allow you to toggle the display of a selected cell or all cells.
+
+In a Jupyter Book publishing workflow, content display can be controlled using hidden (revealable) or removed content identified by cell tags ([docs](https://jupyterbook.org/interactive/hiding.html)).
 
 
 ## `tagstyler`
@@ -270,7 +318,7 @@ The [`nb_extension_tagstyler`](https://github.com/innovationOUtside/nb_extension
 
 ![](images/tagstyler.png)
 
-TO DO - folium magic
+
 
 # Visual and Audio Layout and Feedback Extensions
 
@@ -361,53 +409,26 @@ See also: *Appendix — exploiting rich `__repr__` outputs*.
 
 For example, an extension created to support live diagramming of the table structure of a connected relational database.
 
-## Blockdiag Magic
+## Notebook Cell manipulation
 
-The [`ipython_magic_blockdiag`](https://github.com/innovationOUtside/ipython_magic_blockdiag) extension installs various magics for creating diagrams using the [`blockdiag`(](http://blockdiag.com/en/index.html)family of diagram scripting Python packages.
+A range of extensions exist for customising the behaviour of notebook cells.
 
-![](images/block_diag.png)
-
-![](images/seqdiag.png)
-
-![](images/nw_diag.png)
-
-![](images/actdiag.png)
-
-
-## Cell Diff
+### Cell Diff
 
 The [`cell_diff`](https://github.com/innovationOUtside/nb_cell_diff) extension is based on the Google `diff-match-patch` package and provides a range of simple tools for ad hoc, in notebook, code cell differencing.
 
 ![](images/nb_cell_diff.png)
 
-## Cell Popout
+
+### Cell Popout
 
 The [`nb_cell_dialog`](https://github.com/innovationOUtside/nb_cell_dialog) extension allows cells and code cell outputs to be popped out into a separate floating widget. Closing the widget sends the cell back to its original location in the notebook:
 
 ![](images/popout.gif)
 
-## Cell Shell
+### Cell Shell
 
 The [`cell_shell`](https://github.com/innovationOUtside/nb_cell_shell) magic allows a user to force the notebook to run each code cell in a notebook in a separate Python shell. This means that there are no hidden state effects, but requires that each code cell contains a complete program in order to run.
-
-## Database Schema Display
-
-The [`ipython_magic_sqlalchemy_schemadisplay`](https://github.com/innovationOUtside/ipython_magic_sqlalchemy_schemadisplay) magic will create and display a simple visual entity relation diagram depicting the structure of a connected database.
-
-![](images/example_erd.png)
-
-This extension is being used in a module on database management and analysis to visualise the structure of provided databases as part of worked activities, as well as allowing students to visualise the structure of databases they have constructed for themselves.
-
-
-
-TO DO - flowchart magic
-
-TO DO - sql magic
-
-
-TO DO - cypher magic
-
-TO DO - datasette magic
 
 
 
@@ -433,6 +454,120 @@ The configurator panel for the extension allows the `skip-traceback` function to
 
 
 
+
+## Diagramming
+
+Sever extensions/magics support in the creation of diagrams from simple text descriptions in a code cell.
+
+### Blockdiag Magic
+
+The [`ipython_magic_blockdiag`](https://github.com/innovationOUtside/ipython_magic_blockdiag) extension installs various magics for creating diagrams using the [`blockdiag`(](http://blockdiag.com/en/index.html)family of diagram scripting Python packages.
+
+![](images/block_diag.png)
+
+![](images/seqdiag.png)
+
+![](images/nw_diag.png)
+
+![](images/actdiag.png)
+
+
+## `flowchart_magic`
+
+The [`flowchart_magic`]https://github.com/innovationOUtside/flowchart_js_jp_proxy_widget) provides a simple *jp_proxy_widget* wrapper around the [`flowchart.js`](https://flowchart.js.org/) package to allow for the scripting of simple flowcharts:
+
+![](images/flowchart_js_magic.png)
+
+
+## `ipython_magic_folium ` Magic
+
+[`ipython_magic_folium`](https://github.com/psychemedia/ipython_magic_folium) is a custom magic that simplifies the process of rendering interactive maps.
+
+For example, we can create a simple map centred on a particular location and zoomed into a particular location, or automatically zoom and center a map based on the location of one or markers passed into it:
+
+![](images/folium_magic_demo3.png)
+
+We can load in an render a geojson shapefile:
+
+![](images/folium_magic_demo4.png)
+
+Or we can display a choropleth map coloured by data contained in a *pandas* dataframe:
+
+![](images/folium_magic_demo5.png)
+
+
+
+## Databases
+
+A range of extensions/magics support interactions with databasesi
+
+### `Cypher` Magic
+
+The `cypher_magic`](https://github.com/innovationOUtside/cypher_magic) provides a simple magic for running Cypher database query commands against a connected graph database such as neo4j.
+
+![](images/Cypher_magic_demo.png)
+
+__May 2021: this magic is not currently working in Binder demos at least.*
+
+### Database Schema Display
+
+The [`ipython_magic_sqlalchemy_schemadisplay`](https://github.com/innovationOUtside/ipython_magic_sqlalchemy_schemadisplay) magic will create and display a simple visual entity relation diagram depicting the structure of a connected database.
+
+![](images/example_erd.png)
+
+This extension is being used in a module on database management and analysis to visualise the structure of provided databases as part of worked activities, as well as allowing students to visualise the structure of databases they have constructed for themselves.
+
+
+### `ipython-sql` Magic
+
+The [`ipython-sql`](https://github.com/catherinedevlin/ipython-sql) magic provides support for connecting to and querying relational SQL databases by running native SQL code in a magicked code cell.
+
+![](images/ipython-sql.png)
+
+Results can be previewed as cell outputs or returned as pandas dataframes.
+
+
+## Utilities
+
+Several extensions provide what we might term as general utility functions when working with notebooks.
+
+### Highlighter
+
+The `highlighter` extension, which forms part of the official unoffical `jupyter-contrib-nbextensions` distribution, provides a range of toolbar buttons that can be used to style selected text in a markdown cell. This can be useful for note taking.
+ 
+![](images/highlighter.png)
+
+
+# Command Line Tools
+
+Not extensions as such, several command line tools are also available that may support notebook related  publishing and quality workflows.
+
+## `flake8-nb`
+
+The [`flake8-nb`](https://github.com/s-weigand/flake8-nb) command line utility allows you to run flake8 (and its installed extensions) over one or more notebooks.
+
+One useful feature is the ability to ignore specifically tagged code cells.
+
+## `nbQA`
+
+The [`nbQA`](https://github.com/nbQA-dev/nbQA) package allows you to run a range of linters and formatters including [`flake8`](https://flake8.pycqa.org/en/latest/), [`black`](https://black.readthedocs.io/en/stable/index.html), [`isort`](https://pycqa.github.io/isort/) and [`pyupgrade `](https://github.com/asottile/pyupgrade) over one or more notebooks.
+
+The [`nbqa-inject-flake8-report`](https://github.com/innovationOUtside/nbqa-inject-flake8-report) command line utility can take `nbqa` `flake8` reports and inject them as code cell outputs into the appropriate code cells in checked notebooks. By default, code cells with injected flake8 reports are annotated with a generic `flake8-error` tag as well as a `flake8-error-CODE` tag for each distinct flake8 error code reported for that cell 
+
+## `nb_quality_profile`
+
+The [`nb_quality_profile`](https://github.com/innovationOUtside/nb_quality_profile) package provides a range of utilities for generating quality reports over one or more notebooks, including word counts, single line of code counts, reading and code complexity measures, reading time estimates, over one or more notebooks.
+
+The package can also generate simple visualisation showing the relative length and markdown vs. code cell distribution over one or more notebooks.
+
+![](images/simple_nb_viz_.png)
+
+
+## `nb_spellchecker `
+
+The [`nb_spellchecker`](https://github.com/innovationOUtside/nb_spellchecker) command line utility allows you to spell check markdown cells and comments in code cells in one or more Jupyter notebooks.
+
+
 # JupyterLab Extensions
 
 JupyterLab is the next generation Jupyter user interface, employing user interface framework components different from the classic notebook. This means that classic notebook extensions will not work in the JupyterLab context.
@@ -449,16 +584,6 @@ The [JupyterLab `Collapsible_Headings` extension](https://github.com/aquirdTurtl
 However, the value assigned to `heading_collapsed` is *not* the same in the JupyterLab and classic extensions. In the classic extension, the assignment is to the boolean `true`; in the JupyterLab extension, the assignment is to the string `"true"`.
 
 See this [related issue](https://github.com/aquirdTurtle/Collapsible_Headings/issues/38) requesting metadata parity across extensions.
-
-TO DO dismissible
-
-TO DO hidden cells
-
-TO DO - cell locking
-
-TO DO - dependent cells
-
-TO DO 
 
 [jupyter-scribe](https://github.com/jupytercalpoly/jupyterlab-richtext-mode) JupyterLab extension _"transforms Markdown cells into rich-text-editing cells, powered by ProseMirror"_.
 
@@ -485,7 +610,7 @@ Applications can be launched from the Jupyter notebook homepage *New* menu or th
 
 The `jupyter-server-proxy` idea is useful in several respects:
 
-- a container running a Jupyter server and jupyter-server-proxy only needs to expose a single http port (the one that the notebook / JupyterLab is accessed via). All other applications can be proxied along the same path using the same port;
+- a container running a Jupyter server and jupyter-server-proxy only needs to expose only a single http port (the one that the notebook / JupyterLab is accessed via). All other applications can be proxied along the same path using the same port;
 - many simple web applications applications do not have any authentication; proxying an application behind a Jupyter server means you can make use of the notebook server authenticator to provide a challenge before providing access to the application;
 - the `jupyter-server-proxy` will start an application when it is first requested, so applications do not need to be started when the environment is started; applciations are only started when requested. If a repeated request is made for an application that has already been started, the user will be taken directly to it.
 
