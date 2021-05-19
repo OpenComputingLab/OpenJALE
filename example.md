@@ -401,6 +401,20 @@ Themes are set form the command line. The command line commands allow a particul
 
 Note that using a custom theme may break other other extensions. Use the issues on a [fork of the `jupyterthemes`](https://github.com/ouseful-PR/jupyter-themes/issues) repo to discuss local/OU issues relating to this extension.
 
+# Alternative Presentation Modes
+
+Typically, the Jupyter notebook will be used via an "traditional" notebook interface, but other modes of executing and navigating Jupyter notebooks are also possible.
+
+## Jupyter Book
+
+[*Jupyter Book*](https://jupyterbook.org/intro.html) is a publishing framework for rendering sets of Jupyter notebooks in an HTML book style layout. Notebooks can be renderered with or without code cells executed and code cells themselves may be hidden (collapsed) or removed from the output document altogether.
+
+![](images/jupyter_book_static.png)
+The [`thebelab`](https://thebelab.readthedocs.io/) package allows code blocks in the HTML page to be "activated" and executed against a remote Jupyter server, with the response returned to and embedded within the HTML page as cell execution output.
+
+![](images/thebe.gif)
+
+Code areas in the HTML document can also be made editable, allowing users to edit and write their own code via the HMTL page for remote execution.
 # Custom Activity Extensions and Magics
 
 In certain cases, extensions or magics might be created to support or enable particular activities within the notebook environment.
