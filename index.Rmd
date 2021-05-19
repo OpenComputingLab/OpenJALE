@@ -208,6 +208,7 @@ The  `jupyter-contrib-nbextensions` packaged *live markdown preview* extension w
 
 *Note that the highlighted spellchecking as text is entered comes from the `spellchecker` extension.*
 
+
 ## Quality Process Extensions
 
 By "quality process extensions", we mean extensions that can be used to support the production of text free of error or poor layout.
@@ -222,7 +223,7 @@ The `autopep8` extension provides a toolbar button that allows you to style one 
 ![](images/autopep8.png)
 
 
-## `pycodestyle_magic` / `flake8_magic`
+### `pycodestyle_magic` / `flake8_magic`
 
 The [`pycodestyle_magic`](https://github.com/mattijn/pycodestyle_magic) provides two magics for linting code: `%%pycodestyle` (using [`pycodestyle`](https://pycodestyle.pycqa.org/en/latest/intro.html)) and `%%flake` (using [`flake8`](https://flake8.pycqa.org/en/latest/) and any installed `flake8` extensions).
 
@@ -634,6 +635,16 @@ The [`flake8-nb`](https://github.com/s-weigand/flake8-nb) command line utility a
 
 One useful feature is the ability to ignore specifically tagged code cells.
 
+## `nbdime`
+
+The [`nbdime`](https://nbdime.readthedocs.io/en/latest/) package provides a notebook differencer service that you can use find differences between two versions of the same notebook at a cell level, including cell outputs.
+
+Calling `nbdime` from the command line with paths to two notebooks will launch a simple web service and render a simple web page showing differences between any notebook cells in a web browser.
+
+![](images/nbdiff-web.png)
+
+If notebooks are checked into a local git repository, the `nbdime` notebook extension allows you to compare the current version of the notebook with the previous version.
+
 ## `nbQA`
 
 The [`nbQA`](https://github.com/nbQA-dev/nbQA) package allows you to run a range of linters and formatters including [`flake8`](https://flake8.pycqa.org/en/latest/), [`black`](https://black.readthedocs.io/en/stable/index.html), [`isort`](https://pycqa.github.io/isort/) and [`pyupgrade `](https://github.com/asottile/pyupgrade) over one or more notebooks.
@@ -652,6 +663,16 @@ The package can also generate simple visualisation showing the relative length a
 ## `nb_spellchecker `
 
 The [`nb_spellchecker`](https://github.com/innovationOUtside/nb_spellchecker) command line utility allows you to spell check markdown cells and comments in code cells in one or more Jupyter notebooks.
+
+## `nbval`
+
+The [`nbval`](https://nbval.readthedocs.io/en/latest/) package is an extension to `py.test` that allows you to test the execution of an already run notebook against itself.
+
+![](images/nbval.png)
+
+Running `nbval` executes each code cell in one or more notebooks and raises an error message if the output from running the cell differs from the pre-run output.
+
+Adding a particular comment at the start of a cell, or [tagging the cell in a particular way](https://nbval.readthedocs.io/en/latest/#Using-tags-instead-of-comments), allows it to be exclude for testing purposes, or its output ignored. Cells can also be labeled for where we expect a particular exception to be raised and want to check that error was raised rather than raising an error because the error was raised.
 
 
 # JupyterLab Extensions

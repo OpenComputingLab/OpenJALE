@@ -208,6 +208,7 @@ The  `jupyter-contrib-nbextensions` packaged *live markdown preview* extension w
 
 *Note that the highlighted spellchecking as text is entered comes from the `spellchecker` extension.*
 
+
 ## Quality Process Extensions
 
 By "quality process extensions", we mean extensions that can be used to support the production of text free of error or poor layout.
@@ -222,7 +223,7 @@ The `autopep8` extension provides a toolbar button that allows you to style one 
 ![](images/autopep8.png)
 
 
-## `pycodestyle_magic` / `flake8_magic`
+### `pycodestyle_magic` / `flake8_magic`
 
 The [`pycodestyle_magic`](https://github.com/mattijn/pycodestyle_magic) provides two magics for linting code: `%%pycodestyle` (using [`pycodestyle`](https://pycodestyle.pycqa.org/en/latest/intro.html)) and `%%flake` (using [`flake8`](https://flake8.pycqa.org/en/latest/) and any installed `flake8` extensions).
 
