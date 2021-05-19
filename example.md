@@ -355,7 +355,7 @@ The [`twoCol`](https://github.com/innovationOUtside/nb_extension_twoCol) extensi
 
 # Accessibility Extensions
 
-See also: *Visual and Audio Feedback Extensions*
+See also: *Visual and Audio Feedback Extensions* and *Alternative Presentation Modes*.
 
 ## `accessibility_toolbar`
 
@@ -487,7 +487,6 @@ The [`nb_cell_dialog`](https://github.com/innovationOUtside/nb_cell_dialog) exte
 The [`cell_shell`](https://github.com/innovationOUtside/nb_cell_shell) magic allows a user to force the notebook to run each code cell in a notebook in a separate Python shell. This means that there are no hidden state effects, but requires that each code cell contains a complete program in order to run.
 
 
-
 ### `nbtutor` Code Stepper
 
 The [`nbtutor`](https://github.com/lgpage/nbtutor) extension provides a simple code stepper and variable inspector at the code cell level.
@@ -590,6 +589,12 @@ Several extensions provide what we might term as general utility functions when 
 The `highlighter` extension, which forms part of the official unoffical `jupyter-contrib-nbextensions` distribution, provides a range of toolbar buttons that can be used to style selected text in a markdown cell. This can be useful for note taking.
  
 ![](images/highlighter.png)
+
+### Jupyter Terminals
+
+Jupyter code cells allow you to execute code against a connected kernel as well as run commands against the operating system shell / command line. Whilst the Jupyter notebook server provides a complete terminal via a separate window, at times it may be convenient to have a terminal evailable within a notebook itself. The [`jupyterterminals`](https://github.com/willkessler/jupyterterminals) package provides just such a terminal.
+
+![](images/jupyterterminals.gif)
 
 ## Applications
 
