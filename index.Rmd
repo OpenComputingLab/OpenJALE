@@ -659,7 +659,6 @@ The package can also generate simple visualisation showing the relative length a
 
 ![](images/simple_nb_viz_.png)
 
-
 ## `nb_spellchecker `
 
 The [`nb_spellchecker`](https://github.com/innovationOUtside/nb_spellchecker) command line utility allows you to spell check markdown cells and comments in code cells in one or more Jupyter notebooks.
@@ -673,6 +672,12 @@ The [`nbval`](https://nbval.readthedocs.io/en/latest/) package is an extension t
 Running `nbval` executes each code cell in one or more notebooks and raises an error message if the output from running the cell differs from the pre-run output.
 
 Adding a particular comment at the start of a cell, or [tagging the cell in a particular way](https://nbval.readthedocs.io/en/latest/#Using-tags-instead-of-comments), allows it to be exclude for testing purposes, or its output ignored. Cells can also be labeled for where we expect a particular exception to be raised and want to check that error was raised rather than raising an error because the error was raised.
+
+## `testbook`
+
+The [`testbook`](https://testbook.readthedocs.io/en/latest/) package allows you to write a simple tests file that references particular functions in particular notebooks and run tests against them using a standard Python test framework ([*handy usage docs*](https://github.com/nteract/testbook/issues/81)).
+
+Code cells in tested notebooks can be referenced by code cell number or cell tag.
 
 
 # JupyterLab Extensions
