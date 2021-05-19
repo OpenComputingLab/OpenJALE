@@ -415,6 +415,22 @@ The [`thebelab`](https://thebelab.readthedocs.io/) package allows code blocks in
 ![](images/thebe.gif)
 
 Code areas in the HTML document can also be made editable, allowing users to edit and write their own code via the HMTL page for remote execution.
+## RISE Slideshows
+
+The [`RISE`](https://rise.readthedocs.io/en/stable/) package provides support for interactive slideshows presented via the notebook user interface.
+
+![](images/RISE.gif)
+
+Cell tags are used to identify how cells are presented (or ignored), either as components to a grown slide or starting a new slide.
+
+Code cells remain active within the presentation and can be edited and executed as normal, with code cell outputs being inserted into the cell if the code cell is executed. Code cell outputs from pre-run code cells can also be displayed as part of the presentation.
+
+An additional plugin provides a whiteboard/freehand pen writing over the slide facility.
+
+Notebook materials may be tagged by authors (or users themseleves) using slide tags to allow a subset of the cells to be used to give a presentation overview of the notebook.
+
+This might be useful for tutors in a tutorial activity, for example, or as a "keypoints" navigated summary of the notebook for end users.
+
 # Custom Activity Extensions and Magics
 
 In certain cases, extensions or magics might be created to support or enable particular activities within the notebook environment.
