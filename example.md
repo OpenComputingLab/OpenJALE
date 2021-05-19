@@ -535,6 +535,19 @@ The `highlighter` extension, which forms part of the official unoffical `jupyter
  
 ![](images/highlighter.png)
 
+### `nbev3devsim`
+
+The [`nbev3devsim`](https://github.com/innovationOUtside/nbev3devsim/) package, developed for the OU module TM129, wraps [`ev3devsim`](https://github.com/innovationOUtside/nbev3devsim/), a simple Javascript based 2D robot simulator, as an *ipywidget*.
+
+![](images/nbev3devsim.png)
+
+The widget integration allows the code entered into magicked code cells to sent to the simulator and executed therein. A return path allows data logged in the simulator to be analysed using the "native" unmagicked Python code cells.
+
+![](images/nbev3devsim_nb.png)
+
+Additional magics act as "lab assistants" to configure the simulator widget for particular activities.
+
+Further reading: [*Introducing RoboLab* presentation](https://github.com/innovationOUtside/tm129-robotics2020/blob/master/outreach/Introducing%20RoboLab.md)
 
 # Command Line Tools
 

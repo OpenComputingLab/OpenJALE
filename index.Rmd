@@ -355,7 +355,7 @@ The [`twoCol`](https://github.com/innovationOUtside/nb_extension_twoCol) extensi
 
 # Accessibility Extensions
 
-See also: *Visual and Audio Feedback Extensions*
+See also: *Visual and Audio Feedback Extensions* and *Alternative Presentation Modes*.
 
 ## `accessibility_toolbar`
 
@@ -401,6 +401,62 @@ Themes are set form the command line. The command line commands allow a particul
 
 Note that using a custom theme may break other other extensions. Use the issues on a [fork of the `jupyterthemes`](https://github.com/ouseful-PR/jupyter-themes/issues) repo to discuss local/OU issues relating to this extension.
 
+# Alternative Presentation Modes
+
+Typically, the Jupyter notebook will be used via an "traditional" notebook interface, but other modes of executing and navigating Jupyter notebooks are also possible.
+
+## Jupyter Book
+
+[*Jupyter Book*](https://jupyterbook.org/intro.html) is a publishing framework for rendering sets of Jupyter notebooks in an HTML book style layout. Notebooks can be renderered with or without code cells executed and code cells themselves may be hidden (collapsed) or removed from the output document altogether.
+
+![](images/jupyter_book_static.png)
+The [`thebelab`](https://thebelab.readthedocs.io/) package allows code blocks in the HTML page to be "activated" and executed against a remote Jupyter server, with the response returned to and embedded within the HTML page as cell execution output.
+
+![](images/thebe.gif)
+
+Code areas in the HTML document can also be made editable, allowing users to edit and write their own code via the HMTL page for remote execution.
+
+## Jupyter Graffiti
+
+The [`Jupyter Graffiti`](https://github.com/willkessler/jupytergraffiti) package allows you to record an interactive tutorial or walkthrough of using a notebook, with an audio commentary, that a user can play back.
+
+![](images/jupytergraffiti.gif)
+
+The player actually steps through selected cells and cell actions, such as executing cells or highlighting text.
+
+The Jupyter Graffiti application can be used to present "active" tutorials that a user can pause and further explore within the live notebook.
+
+In certain respects, Jupyter Graffiti may be thought of as handing over your notebook to a tutor who takes remote control of it and walks and talks you through particular parts of it.
+
+## RISE Slideshows
+
+The [`RISE`](https://rise.readthedocs.io/en/stable/) package provides support for interactive slideshows presented via the notebook user interface.
+
+![](images/RISE.gif)
+
+Cell tags are used to identify how cells are presented (or ignored), either as components to a grown slide or starting a new slide.
+
+Code cells remain active within the presentation and can be edited and executed as normal, with code cell outputs being inserted into the cell if the code cell is executed. Code cell outputs from pre-run code cells can also be displayed as part of the presentation.
+
+An additional plugin provides a whiteboard/freehand pen writing over the slide facility.
+
+Notebook materials may be tagged by authors (or users themseleves) using slide tags to allow a subset of the cells to be used to give a presentation overview of the notebook.
+
+This might be useful for tutors in a tutorial activity, for example, or as a "keypoints" navigated summary of the notebook for end users.
+
+
+## `nbplayer` Text Console Based Notebook Player
+
+The [`nbplayer`](https://github.com/Calysto/nbplayer) package provides a simple console based notebook player for running a Jupyter notebook via a text console.
+
+
+## `nbterm`
+
+The [`nbterm`](https://github.com/davidbrochart/nbterm) package lets users view, edit and execute Jupyter Notebooks in the terminal.
+
+![](images/nbterm.png)
+
+
 # Custom Activity Extensions and Magics
 
 In certain cases, extensions or magics might be created to support or enable particular activities within the notebook environment.
@@ -429,7 +485,6 @@ The [`nb_cell_dialog`](https://github.com/innovationOUtside/nb_cell_dialog) exte
 ### Cell Shell
 
 The [`cell_shell`](https://github.com/innovationOUtside/nb_cell_shell) magic allows a user to force the notebook to run each code cell in a notebook in a separate Python shell. This means that there are no hidden state effects, but requires that each code cell contains a complete program in order to run.
-
 
 
 ### `nbtutor` Code Stepper
@@ -535,6 +590,39 @@ The `highlighter` extension, which forms part of the official unoffical `jupyter
  
 ![](images/highlighter.png)
 
+### Jupyter Terminals
+
+Jupyter code cells allow you to execute code against a connected kernel as well as run commands against the operating system shell / command line. Whilst the Jupyter notebook server provides a complete terminal via a separate window, at times it may be convenient to have a terminal evailable within a notebook itself. The [`jupyterterminals`](https://github.com/willkessler/jupyterterminals) package provides just such a terminal.
+
+![](images/jupyterterminals.gif)
+
+## Applications
+
+A wide range of Javascript packages exist that implement simple standalone applications that can be integrated into notebooks, most straightforwardly by wrapping them as an *ipywidget* using the [`jp_proxy_widget`](https://github.com/AaronWatters/jp_proxy_widget/) package.
+
+### `wavesurfer.js` spectrogram
+
+The `wavesurfer.js`](https://wavesurfer-js.org/example/spectrogram/index.html?scroll) package can  render an interactive spectrogram that scrolls along as a linked audio file plays to show the audio waveform and the spectrogram, allowing the user to "see" the structure of the audio file in terms of volume amplitude and frequency as the audio plays out.
+
+![](images/wavesurferjs.png)
+
+Additional plugins, such as the [cursor plugin](https://wavesurfer-js.org/plugins/cursor.html) can enrich the interactivity further.
+
+*This is not currently packaged for single line installation; a recipe for creating the widget is described in [Rapid ipywidgets Prototyping Using Third Party Javascript Packages in Jupyter Notebooks With jp_proxy_widget](https://blog.ouseful.info/2020/01/11/rapid-widget-prototyping-using-third-party-javascript-packages-in-jupyter-notebooks/).*
+
+### `nbev3devsim`
+
+The [`nbev3devsim`](https://github.com/innovationOUtside/nbev3devsim/) package, developed for the OU module TM129, wraps [`ev3devsim`](https://github.com/innovationOUtside/nbev3devsim/), a simple Javascript based 2D robot simulator, as an *ipywidget*.
+
+![](images/nbev3devsim.png)
+
+The widget integration allows the code entered into magicked code cells to sent to the simulator and executed therein. A return path allows data logged in the simulator to be analysed using the "native" unmagicked Python code cells.
+
+![](images/nbev3devsim_nb.png)
+
+Additional magics act as "lab assistants" to configure the simulator widget for particular activities.
+
+Further reading: [*Introducing RoboLab* presentation](https://github.com/innovationOUtside/tm129-robotics2020/blob/master/outreach/Introducing%20RoboLab.md)
 
 # Command Line Tools
 
