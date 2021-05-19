@@ -431,6 +431,19 @@ Notebook materials may be tagged by authors (or users themseleves) using slide t
 
 This might be useful for tutors in a tutorial activity, for example, or as a "keypoints" navigated summary of the notebook for end users.
 
+
+## `nbplayer` Text Console Based Notebook Player
+
+The [`nbplayer`](https://github.com/Calysto/nbplayer) package provides a simple console based notebook player for running a Jupyter notebook via a text console.
+
+
+## `nbterm`
+
+The [`nbterm`](https://github.com/davidbrochart/nbterm) package lets users view, edit and execute Jupyter Notebooks in the terminal.
+
+![](images/nbterm.png)
+
+
 # Custom Activity Extensions and Magics
 
 In certain cases, extensions or magics might be created to support or enable particular activities within the notebook environment.
