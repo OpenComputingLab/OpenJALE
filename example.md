@@ -415,6 +415,19 @@ The [`thebelab`](https://thebelab.readthedocs.io/) package allows code blocks in
 ![](images/thebe.gif)
 
 Code areas in the HTML document can also be made editable, allowing users to edit and write their own code via the HMTL page for remote execution.
+
+## Jupyter Graffiti
+
+The [`Jupyter Graffiti`](https://github.com/willkessler/jupytergraffiti) package allows you to record an interactive tutorial or walkthrough of using a notebook, with an audio commentary, that a user can play back.
+
+![](images/jupytergraffiti.gif)
+
+The player actually steps through selected cells and cell actions, such as executing cells or highlighting text.
+
+The Jupyter Graffiti application can be used to present "active" tutorials that a user can pause and further explore within the live notebook.
+
+In certain respects, Jupyter Graffiti may be thought of as handing over your notebook to a tutor who takes remote control of it and walks and talks you through particular parts of it.
+
 ## RISE Slideshows
 
 The [`RISE`](https://rise.readthedocs.io/en/stable/) package provides support for interactive slideshows presented via the notebook user interface.
