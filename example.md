@@ -535,6 +535,20 @@ The `highlighter` extension, which forms part of the official unoffical `jupyter
  
 ![](images/highlighter.png)
 
+## Applications
+
+A wide range of Javascript packages exist that implement simple standalone applications that can be integrated into notebooks, most straightforwardly by wrapping them as an *ipywidget* using the [`jp_proxy_widget`](https://github.com/AaronWatters/jp_proxy_widget/) package.
+
+### `wavesurfer.js` spectrogram
+
+The `wavesurfer.js`](https://wavesurfer-js.org/example/spectrogram/index.html?scroll) package can  render an interactive spectrogram that scrolls along as a linked audio file plays to show the audio waveform and the spectrogram, allowing the user to "see" the structure of the audio file in terms of volume amplitude and frequency as the audio plays out.
+
+![](images/wavesurferjs.png)
+
+Additional plugins, such as the [cursor plugin](https://wavesurfer-js.org/plugins/cursor.html) can enrich the interactivity further.
+
+*This is not currently packaged for single line installation; a recipe for creating the widget is described in [Rapid ipywidgets Prototyping Using Third Party Javascript Packages in Jupyter Notebooks With jp_proxy_widget](https://blog.ouseful.info/2020/01/11/rapid-widget-prototyping-using-third-party-javascript-packages-in-jupyter-notebooks/).*
+
 ### `nbev3devsim`
 
 The [`nbev3devsim`](https://github.com/innovationOUtside/nbev3devsim/) package, developed for the OU module TM129, wraps [`ev3devsim`](https://github.com/innovationOUtside/nbev3devsim/), a simple Javascript based 2D robot simulator, as an *ipywidget*.
