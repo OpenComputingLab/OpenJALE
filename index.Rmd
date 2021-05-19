@@ -590,7 +590,7 @@ The `highlighter` extension, which forms part of the official unoffical `jupyter
  
 ![](images/highlighter.png)
 
-### Jupyter Terminals
+### Jupyter Inline Terminals
 
 Jupyter code cells allow you to execute code against a connected kernel as well as run commands against the operating system shell / command line. Whilst the Jupyter notebook server provides a complete terminal via a separate window, at times it may be convenient to have a terminal evailable within a notebook itself. The [`jupyterterminals`](https://github.com/willkessler/jupyterterminals) package provides just such a terminal.
 
