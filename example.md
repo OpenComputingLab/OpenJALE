@@ -654,6 +654,16 @@ The package can also generate simple visualisation showing the relative length a
 
 The [`nb_spellchecker`](https://github.com/innovationOUtside/nb_spellchecker) command line utility allows you to spell check markdown cells and comments in code cells in one or more Jupyter notebooks.
 
+## `nbval`
+
+The [`nbval`](https://nbval.readthedocs.io/en/latest/) package is an extension to `py.test` that allows you to test the execution of an already run notebook against itself.
+
+![](images/nbval.png)
+
+Running `nbval` executes each code cell in one or more notebooks and raises an error message if the output from running the cell differs from the pre-run output.
+
+Adding a particular comment at the start of a cell, or [tagging the cell in a particular way](https://nbval.readthedocs.io/en/latest/#Using-tags-instead-of-comments), allows it to be exclude for testing purposes, or its output ignored. Cells can also be labeled for where we expect a particular exception to be raised and want to check that error was raised rather than raising an error because the error was raised.
+
 
 # JupyterLab Extensions
 
