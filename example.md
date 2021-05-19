@@ -635,6 +635,16 @@ The [`flake8-nb`](https://github.com/s-weigand/flake8-nb) command line utility a
 
 One useful feature is the ability to ignore specifically tagged code cells.
 
+## `nbdime`
+
+The [`nbdime`](https://nbdime.readthedocs.io/en/latest/) package provides a notebook differencer service that you can use find differences between two versions of the same notebook at a cell level, including cell outputs.
+
+Calling `nbdime` from the command line with paths to two notebooks will launch a simple web service and render a simple web page showing differences between any notebook cells in a web browser.
+
+![](images/nbdiff-web.png)
+
+If notebooks are checked into a local git repository, the `nbdime` notebook extension allows you to compare the current version of the notebook with the previous version.
+
 ## `nbQA`
 
 The [`nbQA`](https://github.com/nbQA-dev/nbQA) package allows you to run a range of linters and formatters including [`flake8`](https://flake8.pycqa.org/en/latest/), [`black`](https://black.readthedocs.io/en/stable/index.html), [`isort`](https://pycqa.github.io/isort/) and [`pyupgrade `](https://github.com/asottile/pyupgrade) over one or more notebooks.
