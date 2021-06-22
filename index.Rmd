@@ -402,6 +402,19 @@ Themes are set form the command line. The command line commands allow a particul
 
 Note that using a custom theme may break other other extensions. Use the issues on a [fork of the `jupyterthemes`](https://github.com/ouseful-PR/jupyter-themes/issues) repo to discuss local/OU issues relating to this extension.
 
+# Recording Interactive Widget Sessions
+
+As well as using generative scripts to create media assets, we can also record activity carried out within a widget as a rich media object.
+
+See also: *Alternative Presentation Modes: Jupyter Graffiti* for an example of how to record "live replayable" interactive notebook sessions and tutorials.
+
+## `ipywebrtc`
+
+The [`maartenbreddels/ipywebrtc`](https://github.com/maartenbreddels/ipywebrtc) package allows you to create a *MediaStream* out of any `ipywidget`, video file, image file, audio file or connected webcam/camera.
+
+The *MediaStream* can then be used to record a movie, image snapshot or audio fragment, streamed to peers using a simple chat function, or used as a texture in a 3D interactve [`ipyvolume`](https://github.com/maartenbreddels/ipyvolume) widget.
+
+
 # Alternative Presentation Modes
 
 Typically, the Jupyter notebook will be used via an "traditional" notebook interface, but other modes of executing and navigating Jupyter notebooks are also possible.
