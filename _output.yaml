@@ -1,4 +1,6 @@
 bookdown::gitbook:
+  includes:
+    in_header: [goatcounter.html]
   config:
     toc_depth: 3
     toc:
