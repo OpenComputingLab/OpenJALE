@@ -179,7 +179,7 @@ Configuration settings are saved to a config file and may be distributed as part
 
 The [`jupytext` package](https://jupytext.readthedocs.io/en/latest/) and associated server extension provides a toolkit for converting between the Jupyter notebook `.ipynb` document format and a wide variety of structured markdown formats including MyST and Rmd. Conversions with structure Python formats (such as the percent format used by VS Code, as well as other IDES) is also supported.
 
-The `jupytext` sever extension allows supported document formats to be opened directly from the notebook homepage into the notebook editor. Markdown and code cell input content are saved into the markdown formats, although such documents can also be "paired" with an `.ipynb` notebook document that will persist and render code cell outputs.
+The `jupytext` server extension allows supported document formats to be opened directly from the notebook homepage into the notebook editor. Markdown and code cell input content are saved into the markdown formats, although such documents can also be "paired" with an `.ipynb` notebook document that will persist and render code cell outputs.
 
 Native `.ipynb` documents can also be paired with one or more text form representations, so whenever the notebook is saved the additional formats, as well as the `.ipynb` format are saved too (for example, into a hidden directory).
 
@@ -294,7 +294,7 @@ A configuration panel allows the user to control which (if any) buttons are disp
 
 ## Dismissible boxes
 
-Note an extension, this is a native but underappreciated trick, using an `alert-dismissible` class tag to add a dismissable interaction to a div element inside a markdown block:
+Not an extension, this is a native but underappreciated trick, using an `alert-dismissible` class tag to add a dismissable interaction to a div element inside a markdown block:
 
 ```html
 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -513,7 +513,7 @@ The configurator panel for the extension allows the `skip-traceback` function to
 
 ## Diagramming
 
-Sever extensions/magics support in the creation of diagrams from simple text descriptions in a code cell.
+Server extensions/magics support in the creation of diagrams from simple text descriptions in a code cell.
 
 ### Blockdiag Magic
 
