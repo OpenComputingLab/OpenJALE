@@ -534,6 +534,15 @@ The [`flowchart_magic`]https://github.com/innovationOUtside/flowchart_js_jp_prox
 
 ![](images/flowchart_js_magic.png)
 
+The magic will also render a flowhchart from the code contained in a magicked cell using the [`cdfmlr/pyflowchart`](https://github.com/cdfmlr/pyflowchart) Python package:
+
+![](images/flowchart_magic_fn.png)
+
+Flowcharts can also be rendered from function definitions:
+
+![](images/pyflowchart_fn.png)
+
+
 
 ### `ipython_magic_folium ` Magic
 
