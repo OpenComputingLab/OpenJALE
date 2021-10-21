@@ -2,7 +2,7 @@
 
 *OpenJALE*, the *Open Jupyter Authoring and Learning Environment*, is an open, opinionated Jupyter notebook based environment for authoring and working with notebook based learning materials.
 
-It's open not least in the sense that you are free to set up the environment as you want by installing and enabling particular extensions to customise the environment. It's opinionated to the extent that I have opinions about which extensions I like, and how they can be used to together to create particular effects in a teaching and learning environment. Not all the available Jupyter extensions are listed here, perhaps because I don't like them, perhaps because I don't think they are relevant, perhaps because or forgot or haven't got round to them yet. (This document is a living document and is subject to change...)
+It's open not least in the sense that you are free to set up the environment according to your own preferences by installing and enabling particular extensions to customise the environment. It's opinionated to the extent that I have opinions about which extensions I like, and how they can be used to together to create particular effects in a teaching and learning environment. Not all the available Jupyter extensions are listed here, perhaps because I don't like them, perhaps because I don't think they are relevant, perhaps because or forgot or haven't got round to them yet. (This document is a living document and is subject to change...)
 
 The document describes a range of currently available extensions that support customisation of a Jupyter environment to enrich both the authoring and end user experience.
 
