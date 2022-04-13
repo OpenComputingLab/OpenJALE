@@ -1,5 +1,5 @@
 # OpenJALE
-__Open Jupyter Authoring and Learning Environment__
+__Open Jupyter Authoring and Learning Environment (Classic Notebook Edition)__
 
 Book site: https://opencomputinglab.github.io/OpenJALE/
 
