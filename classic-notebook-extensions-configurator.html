@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>4 Classic Notebook Extensions &amp; Configurator | _main.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="4 Classic Notebook Extensions &amp; Configurator | _main.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="4 Classic Notebook Extensions &amp; Configurator | _main.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="recipes.html"/>
+<link rel="next" href="authoring-arbitrary-text-documents-in-the-notebook-editor.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script data-goatcounter="https://rallydatajunkie.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
+<style type="text/css">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><strong>OpenJALE</strong></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction<span></span></a></li>
+<li class="chapter" data-level="2" data-path="customising-the-jupyter-environment.html"><a href="customising-the-jupyter-environment.html"><i class="fa fa-check"></i><b>2</b> Customising the Jupyter Environment<span></span></a><ul>
+<li class="chapter" data-level="2.1" data-path="customising-the-jupyter-environment.html"><a href="customising-the-jupyter-environment.html#extension-flavours"><i class="fa fa-check"></i><b>2.1</b> Extension Flavours<span></span></a></li>
+<li class="chapter" data-level="2.2" data-path="customising-the-jupyter-environment.html"><a href="customising-the-jupyter-environment.html#customising-the-authoring-environment"><i class="fa fa-check"></i><b>2.2</b> Customising the Authoring Environment<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="customising-the-jupyter-environment.html"><a href="customising-the-jupyter-environment.html#customising-the-teaching-and-learning-environment"><i class="fa fa-check"></i><b>2.3</b> Customising the Teaching and Learning Environment<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="customising-the-jupyter-environment.html"><a href="customising-the-jupyter-environment.html#a-question-of-defaults"><i class="fa fa-check"></i><b>2.4</b> A Question of Defaults<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="recipes.html"><a href="recipes.html"><i class="fa fa-check"></i><b>3</b> Recipes<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="recipes.html"><a href="recipes.html#python-code-error-reporting"><i class="fa fa-check"></i><b>3.1</b> Python Code Error Reporting<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="recipes.html"><a href="recipes.html#notebook-activity-sections"><i class="fa fa-check"></i><b>3.2</b> Notebook Activity Sections<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="recipes.html"><a href="recipes.html#spellchecked-and-previewed-editing"><i class="fa fa-check"></i><b>3.3</b> Spellchecked and Previewed Editing<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="classic-notebook-extensions-configurator.html"><a href="classic-notebook-extensions-configurator.html"><i class="fa fa-check"></i><b>4</b> Classic Notebook Extensions &amp; Configurator<span></span></a></li>
+<li class="chapter" data-level="5" data-path="authoring-arbitrary-text-documents-in-the-notebook-editor.html"><a href="authoring-arbitrary-text-documents-in-the-notebook-editor.html"><i class="fa fa-check"></i><b>5</b> Authoring Arbitrary Text Documents in the Notebook Editor<span></span></a></li>
+<li class="chapter" data-level="6" data-path="authoring-extensions.html"><a href="authoring-extensions.html"><i class="fa fa-check"></i><b>6</b> Authoring Extensions<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="authoring-extensions.html"><a href="authoring-extensions.html#editing-environment-extensions"><i class="fa fa-check"></i><b>6.1</b> Editing Environment Extensions<span></span></a><ul>
+<li class="chapter" data-level="6.1.1" data-path="authoring-extensions.html"><a href="authoring-extensions.html#live-markdown-preview"><i class="fa fa-check"></i><b>6.1.1</b> Live markdown Preview<span></span></a></li>
+<li class="chapter" data-level="6.1.2" data-path="authoring-extensions.html"><a href="authoring-extensions.html#python-output-in-markdown-cells"><i class="fa fa-check"></i><b>6.1.2</b> Python Output in Markdown Cells<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="authoring-extensions.html"><a href="authoring-extensions.html#quality-process-extensions"><i class="fa fa-check"></i><b>6.2</b> Quality Process Extensions<span></span></a><ul>
+<li class="chapter" data-level="6.2.1" data-path="authoring-extensions.html"><a href="authoring-extensions.html#autopep8"><i class="fa fa-check"></i><b>6.2.1</b> <code>autopep8</code><span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="authoring-extensions.html"><a href="authoring-extensions.html#pycodestyle_magic-flake8_magic"><i class="fa fa-check"></i><b>6.2.2</b> <code>pycodestyle_magic</code> / <code>flake8_magic</code><span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="authoring-extensions.html"><a href="authoring-extensions.html#spellchecking"><i class="fa fa-check"></i><b>6.2.3</b> Spellchecking<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="styling-extensions.html"><a href="styling-extensions.html"><i class="fa fa-check"></i><b>7</b> Styling Extensions<span></span></a><ul>
+<li class="chapter" data-level="7.1" data-path="styling-extensions.html"><a href="styling-extensions.html#code-folding"><i class="fa fa-check"></i><b>7.1</b> Code folding<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="styling-extensions.html"><a href="styling-extensions.html#collapsible-headings"><i class="fa fa-check"></i><b>7.2</b> Collapsible Headings<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="styling-extensions.html"><a href="styling-extensions.html#empinken"><i class="fa fa-check"></i><b>7.3</b> <code>empinken</code><span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="styling-extensions.html"><a href="styling-extensions.html#dismissible-boxes"><i class="fa fa-check"></i><b>7.4</b> Dismissible boxes<span></span></a></li>
+<li class="chapter" data-level="7.5" data-path="styling-extensions.html"><a href="styling-extensions.html#hide-input-hide-all-input"><i class="fa fa-check"></i><b>7.5</b> Hide Input / Hide All Input<span></span></a></li>
+<li class="chapter" data-level="7.6" data-path="styling-extensions.html"><a href="styling-extensions.html#tagstyler"><i class="fa fa-check"></i><b>7.6</b> <code>tagstyler</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="visual-and-audio-layout-and-feedback-extensions.html"><a href="visual-and-audio-layout-and-feedback-extensions.html"><i class="fa fa-check"></i><b>8</b> Visual and Audio Layout and Feedback Extensions<span></span></a><ul>
+<li class="chapter" data-level="8.1" data-path="visual-and-audio-layout-and-feedback-extensions.html"><a href="visual-and-audio-layout-and-feedback-extensions.html#cell-execution-status"><i class="fa fa-check"></i><b>8.1</b> Cell Execution Status<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="visual-and-audio-layout-and-feedback-extensions.html"><a href="visual-and-audio-layout-and-feedback-extensions.html#two-column-display"><i class="fa fa-check"></i><b>8.2</b> Two Column Display<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="accessibility-extensions.html"><a href="accessibility-extensions.html"><i class="fa fa-check"></i><b>9</b> Accessibility Extensions<span></span></a><ul>
+<li class="chapter" data-level="9.1" data-path="accessibility-extensions.html"><a href="accessibility-extensions.html#accessibility_toolbar"><i class="fa fa-check"></i><b>9.1</b> <code>accessibility_toolbar</code><span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="accessibility-extensions.html"><a href="accessibility-extensions.html#jupyter-a11y"><i class="fa fa-check"></i><b>9.2</b> <code>jupyter-a11y</code><span></span></a></li>
+<li class="chapter" data-level="9.3" data-path="accessibility-extensions.html"><a href="accessibility-extensions.html#jupyterthemes"><i class="fa fa-check"></i><b>9.3</b> <code>jupyterthemes</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="recording-interactive-widget-sessions.html"><a href="recording-interactive-widget-sessions.html"><i class="fa fa-check"></i><b>10</b> Recording Interactive Widget Sessions<span></span></a><ul>
+<li class="chapter" data-level="10.1" data-path="recording-interactive-widget-sessions.html"><a href="recording-interactive-widget-sessions.html#ipywebrtc"><i class="fa fa-check"></i><b>10.1</b> <code>ipywebrtc</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html"><i class="fa fa-check"></i><b>11</b> Alternative Presentation Modes<span></span></a><ul>
+<li class="chapter" data-level="11.1" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html#jupyter-book"><i class="fa fa-check"></i><b>11.1</b> Jupyter Book<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html#jupyter-graffiti"><i class="fa fa-check"></i><b>11.2</b> Jupyter Graffiti<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html#rise-slideshows"><i class="fa fa-check"></i><b>11.3</b> RISE Slideshows<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html#nbplayer-text-console-based-notebook-player"><i class="fa fa-check"></i><b>11.4</b> <code>nbplayer</code> Text Console Based Notebook Player<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="alternative-presentation-modes.html"><a href="alternative-presentation-modes.html#nbterm"><i class="fa fa-check"></i><b>11.5</b> <code>nbterm</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html"><i class="fa fa-check"></i><b>12</b> Custom Activity Extensions and Magics<span></span></a><ul>
+<li class="chapter" data-level="12.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#notebook-cell-manipulation"><i class="fa fa-check"></i><b>12.1</b> Notebook Cell manipulation<span></span></a><ul>
+<li class="chapter" data-level="12.1.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#cell-diff"><i class="fa fa-check"></i><b>12.1.1</b> Cell Diff<span></span></a></li>
+<li class="chapter" data-level="12.1.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#cell-popout"><i class="fa fa-check"></i><b>12.1.2</b> Cell Popout<span></span></a></li>
+<li class="chapter" data-level="12.1.3" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#cell-shell"><i class="fa fa-check"></i><b>12.1.3</b> Cell Shell<span></span></a></li>
+<li class="chapter" data-level="12.1.4" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#nbtutor-code-stepper"><i class="fa fa-check"></i><b>12.1.4</b> <code>nbtutor</code> Code Stepper<span></span></a></li>
+<li class="chapter" data-level="12.1.5" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#skip-traceback"><i class="fa fa-check"></i><b>12.1.5</b> <code>skip-traceback</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#diagramming"><i class="fa fa-check"></i><b>12.2</b> Diagramming<span></span></a><ul>
+<li class="chapter" data-level="12.2.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#blockdiag-magic"><i class="fa fa-check"></i><b>12.2.1</b> Blockdiag Magic<span></span></a></li>
+<li class="chapter" data-level="12.2.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#flowchart_magic"><i class="fa fa-check"></i><b>12.2.2</b> <code>flowchart_magic</code><span></span></a></li>
+<li class="chapter" data-level="12.2.3" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#ipython_magic_folium-magic"><i class="fa fa-check"></i><b>12.2.3</b> <code>ipython_magic_folium</code> Magic<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#databases"><i class="fa fa-check"></i><b>12.3</b> Databases<span></span></a><ul>
+<li class="chapter" data-level="12.3.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#cypher-magic"><i class="fa fa-check"></i><b>12.3.1</b> <code>Cypher</code> Magic<span></span></a></li>
+<li class="chapter" data-level="12.3.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#database-schema-display"><i class="fa fa-check"></i><b>12.3.2</b> Database Schema Display<span></span></a></li>
+<li class="chapter" data-level="12.3.3" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#ipython-sql-magic"><i class="fa fa-check"></i><b>12.3.3</b> <code>ipython-sql</code> Magic<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#utilities"><i class="fa fa-check"></i><b>12.4</b> Utilities<span></span></a><ul>
+<li class="chapter" data-level="12.4.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#highlighter"><i class="fa fa-check"></i><b>12.4.1</b> Highlighter<span></span></a></li>
+<li class="chapter" data-level="12.4.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#jupyter-inline-terminals"><i class="fa fa-check"></i><b>12.4.2</b> Jupyter Inline Terminals<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.5" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#applications"><i class="fa fa-check"></i><b>12.5</b> Applications<span></span></a><ul>
+<li class="chapter" data-level="12.5.1" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#wavesurfer.js-spectrogram"><i class="fa fa-check"></i><b>12.5.1</b> <code>wavesurfer.js</code> spectrogram<span></span></a></li>
+<li class="chapter" data-level="12.5.2" data-path="custom-activity-extensions-and-magics.html"><a href="custom-activity-extensions-and-magics.html#nbev3devsim"><i class="fa fa-check"></i><b>12.5.2</b> <code>nbev3devsim</code><span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="command-line-tools.html"><a href="command-line-tools.html"><i class="fa fa-check"></i><b>13</b> Command Line Tools<span></span></a><ul>
+<li class="chapter" data-level="13.1" data-path="command-line-tools.html"><a href="command-line-tools.html#flake8-nb"><i class="fa fa-check"></i><b>13.1</b> <code>flake8-nb</code><span></span></a></li>
+<li class="chapter" data-level="13.2" data-path="command-line-tools.html"><a href="command-line-tools.html#nbdime"><i class="fa fa-check"></i><b>13.2</b> <code>nbdime</code><span></span></a></li>
+<li class="chapter" data-level="13.3" data-path="command-line-tools.html"><a href="command-line-tools.html#nbqa"><i class="fa fa-check"></i><b>13.3</b> <code>nbQA</code><span></span></a></li>
+<li class="chapter" data-level="13.4" data-path="command-line-tools.html"><a href="command-line-tools.html#nb_quality_profile"><i class="fa fa-check"></i><b>13.4</b> <code>nb_quality_profile</code><span></span></a></li>
+<li class="chapter" data-level="13.5" data-path="command-line-tools.html"><a href="command-line-tools.html#nb_spellchecker"><i class="fa fa-check"></i><b>13.5</b> <code>nb_spellchecker</code><span></span></a></li>
+<li class="chapter" data-level="13.6" data-path="command-line-tools.html"><a href="command-line-tools.html#nbval"><i class="fa fa-check"></i><b>13.6</b> <code>nbval</code><span></span></a></li>
+<li class="chapter" data-level="13.7" data-path="command-line-tools.html"><a href="command-line-tools.html#testbook"><i class="fa fa-check"></i><b>13.7</b> <code>testbook</code><span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="jupyterlab-extensions.html"><a href="jupyterlab-extensions.html"><i class="fa fa-check"></i><b>14</b> JupyterLab Extensions<span></span></a><ul>
+<li class="chapter" data-level="14.1" data-path="jupyterlab-extensions.html"><a href="jupyterlab-extensions.html#collapsible-headings-1"><i class="fa fa-check"></i><b>14.1</b> Collapsible Headings<span></span></a></li>
+</ul></li>
+<li><a href="appendix-exploiting-rich-__repr__-outputs.html#appendix-exploiting-rich-__repr__-outputs">Appendix — exploiting rich <code>__repr__</code> Outputs<span></span></a></li>
+<li><a href="appendix-jupyter-server-proxy-applications.html#appendix-jupyter-server-proxy-applications">Appendix — Jupyter server proxy applications<span></span></a><ul>
+<li class="chapter" data-level="14.2" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html"><i class="fa fa-check"></i><b>14.2</b> OpenRefine<span></span></a></li>
+<li class="chapter" data-level="14.3" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#pgweb"><i class="fa fa-check"></i><b>14.3</b> <code>pgweb</code><span></span></a></li>
+<li class="chapter" data-level="14.4" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#nb_tensorspace_server_proxy"><i class="fa fa-check"></i><b>14.4</b> <code>nb_tensorspace_server_proxy</code><span></span></a></li>
+<li class="chapter" data-level="14.5" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#tensorflow-playground"><i class="fa fa-check"></i><b>14.5</b> Tensorflow Playground<span></span></a></li>
+<li class="chapter" data-level="14.6" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#serverproxy_convnet_mnist"><i class="fa fa-check"></i><b>14.6</b> <code>serverproxy_convnet_mnist</code><span></span></a></li>
+<li class="chapter" data-level="14.7" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#serverproxy_tfjs_demos"><i class="fa fa-check"></i><b>14.7</b> <code>serverproxy_tfjs_demos</code><span></span></a></li>
+<li class="chapter" data-level="14.8" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#handwritten-digit-prediction"><i class="fa fa-check"></i><b>14.8</b> Handwritten Digit Prediction<span></span></a></li>
+<li class="chapter" data-level="14.9" data-path="appendix-jupyter-server-proxy-applications.html"><a href="appendix-jupyter-server-proxy-applications.html#rstudio-shiny-applications"><i class="fa fa-check"></i><b>14.9</b> RStudio / Shiny Applications<span></span></a></li>
+</ul></li>
+<li><a href="authoring-notebooks-in-vs-code.html#authoring-notebooks-in-vs-code">Authoring Notebooks in VS Code<span></span></a></li>
+<li><a href="authoring-notebooks-from-rstudio.html#authoring-notebooks-from-rstudio">Authoring Notebooks from RStudio<span></span></a></li>
+<li class="divider"></li>
+<li>Tony Hirst, May 2021</li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="classic-notebook-extensions-configurator" class="section level1 hasAnchor">
+<h1><span class="header-section-number">4</span> Classic Notebook Extensions &amp; Configurator<a href="classic-notebook-extensions-configurator.html#classic-notebook-extensions-configurator" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>A large number of very useful “official unoffocial” community contributed extensions are distributed as part of the <a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/index.html"><code>jupyter_contrib_nbextensions</code></a> package</p>
+<p>In the classic Jupyter notebook environment, the <a href="https://github.com/Jupyter-contrib/jupyter_nbextensions_configurator"><code>nbextensions</code> configurator</a> provides a handy interfacing for managing installed extensions.</p>
+<p><img src="images/Nbextensions_Configuration.png" /></p>
+<p>Installed extensions are automatically listed and may be enabled / disabled from the configurator.</p>
+<p>If an extension has its own configuration settings, this are displayed and can be controlled when the extension is selected in the <code>nbconfigurator</code> installed extensions list.</p>
+<p>Configuration settings are saved to a config file and may be distributed as part of an environment.</p>
+<p><em>What is currently lacking is a tool that can detect and install publicly listed extensions. At the moment, there is no reliable extensions registry / list that I am aware of.</em></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="recipes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="authoring-arbitrary-text-documents-in-the-notebook-editor.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": {}
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": {},
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toc_depth": 3,
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+</body>
+
+</html>
